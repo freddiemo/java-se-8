@@ -1,10 +1,21 @@
 package se.example;
 
+import org.omg.Messaging.SyncScopeHelper;
+
 /**
- * Hello World sample
+ * Variables sample
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.printf("Hello World!");
+        int myFirstNumber = 5;
+        System.out.println(myFirstNumber);
+        myFirstNumber = 10;
+        System.out.println(myFirstNumber);
+        myFirstNumber = 1000;
+        System.out.println(myFirstNumber);
+        myFirstNumber = 10 + 5;
+        System.out.println(myFirstNumber);
+        myFirstNumber = (10 + 5) + (2 * 10);
+        System.out.print(myFirstNumber);
     }
 }
