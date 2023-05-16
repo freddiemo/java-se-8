@@ -5,18 +5,25 @@ package se.example;
  */
 public class Main {
     public static void main(String[] args) {
-        checkNumber(1);
-        checkNumber(0);
-        checkNumber(-1);
+        printConversion(1.5);
     }
 
-    public static void checkNumber(int number) {
-        if(number > 0) {
-            System.out.println("positive");
-        } else if (number < 0){
-            System.out.println("negative");
+    public static long toMilesPerHour(double kilometersPerHour) {
+        long rounded = 0;
+        if (kilometersPerHour < 0) {
+            rounded = -1;
         } else {
-            System.out.println("zero");
+            rounded = (long) Math.round(kilometersPerHour * 0.62150404);
+        }
+        return rounded;
+    }
+
+    public static void printConversion(double kilometersPerHour) {
+        long milesPerHour = toMilesPerHour(kilometersPerHour);
+        if (milesPerHour >= 0) {
+            System.out.println(kilometersPerHour + " km/h = " + milesPerHour + " mi/h");
+        } else {
+            System.out.println("Invalid Value");
         }
     }
 
