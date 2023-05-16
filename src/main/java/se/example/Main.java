@@ -1,21 +1,42 @@
 package se.example;
 
 /**
- * Ternary operator samples.
+ * If/else samples.
  */
 public class Main {
     public static void main(String[] args) {
-        String makeOfCar = "Volkswagen";
-        boolean isDomestic = makeOfCar == "Volkswagen" ? false : true; // isDomestic = (makeOfCar != "Volkswagen")
-        if (isDomestic) {
-            System.out.println("This car is domestic to our country");
-        }
+       boolean gameOver = true;
+       int score = 5000;
+       int levelCompleted = 5;
+       int bonus = 100;
+       if (score <= 5000) {
+           System.out.println("Your score is less than or equal to 5000");
+       } else {
+            System.out.println("Got here");
+       }
 
-        int ageOfClient = 20;
-        String ageText = (ageOfClient >= 18) ? "Over Eighteen" : "Still a kid";
-        System.out.println("Our client is " + ageText);
+       score = 800;
+       if (score < 5000 && score > 1000) {
+           System.out.println("Your score was less than 5000 but greater than 1000");
+       } else if (score < 1000) {
+           System.out.println("Your score was less than 1000");
+       } else {
+           System.out.println("Got here");
+       }
 
-        String s = (isDomestic) ? "This car is domestic" : "This car is not domestic";
-        System.out.println(s);
+       int finalScore = score;
+       if (gameOver) {
+           finalScore += (levelCompleted * bonus);
+           System.out.println("Your final score was " + finalScore);
+       }
+
+       score = 10000;
+       finalScore = score;
+       levelCompleted = 8;
+       bonus = 200;
+       if (gameOver) {
+           finalScore += (levelCompleted * bonus);
+           System.out.println("Your final score was " + finalScore);
+       }
     }
 }
