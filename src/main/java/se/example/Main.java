@@ -5,17 +5,16 @@ package se.example;
  */
 public class Main {
     public static void main(String[] args) {
-        printMegaBytesAndKiloBytes(0);
+        System.out.println(shouldWakeUp(true, 0));
     }
 
-    public static void printMegaBytesAndKiloBytes(int kiloBytes) {
-        int measure = 1024;
-        double megaBytes = kiloBytes / measure;
-        if (kiloBytes >=0) {
-            System.out.println(kiloBytes + " KB = " + Math.round(megaBytes)+ " MB and " + kiloBytes % measure + " KB");
+    public static boolean shouldWakeUp(boolean barking, int hourOfDay) {
+        if (barking && (hourOfDay >= 0 && hourOfDay < 24) && (hourOfDay > 22 || hourOfDay < 8)) {
+            barking = true;
         } else {
-            System.out.println("Invalid Value");
+            barking = false;
         }
+        return barking;
     }
 
 }
