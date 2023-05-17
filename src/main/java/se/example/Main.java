@@ -5,16 +5,17 @@ package se.example;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println(shouldWakeUp(true, 0));
+        System.out.println(isLeapYear(1924));
     }
 
-    public static boolean shouldWakeUp(boolean barking, int hourOfDay) {
-        if (barking && (hourOfDay >= 0 && hourOfDay < 24) && (hourOfDay > 22 || hourOfDay < 8)) {
-            barking = true;
-        } else {
-            barking = false;
+    public static boolean isLeapYear(int year) {
+        boolean isLeap= false;
+        if (year >= 1 && year <= 9999) {
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                isLeap = true;
+            }
         }
-        return barking;
+        return isLeap;
     }
 
 }
