@@ -5,24 +5,25 @@ package se.example;
  */
 public class Main {
     public static void main(String[] args) {
-        printFactors(6);
-        printFactors(32);
-        printFactors(10);
-        printFactors(-1);
+        System.out.println(getGreatestCommonDivisor(25, 15));
+        System.out.println(getGreatestCommonDivisor(12, 30));
+        System.out.println(getGreatestCommonDivisor(9, 18));
+        System.out.println(getGreatestCommonDivisor(81, 153));
     }
 
-    public static void printFactors(int number) {
-        if (number < 1) {
-            System.out.println("Invalid Value");
-        } else {
-            int factor = 1;
-            while(factor <= number) {
-                if (number % factor == 0) {
-                    System.out.println(factor);
-                }
-                factor++;
-            }
+    public static int getGreatestCommonDivisor(int first, int second) {
+        if (first < 10 || second < 10) {
+            return -1;
         }
+        int maxDivisor = (first < second) ? first : second;
+        do {
+            if ((first % maxDivisor == 0) && (second % maxDivisor == 0)) {
+                return maxDivisor;
+            }
+            maxDivisor--;
+        } while(maxDivisor > 0);
+
+        return maxDivisor;
     }
 
 }
