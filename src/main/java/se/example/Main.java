@@ -5,16 +5,21 @@ package se.example;
  */
 public class Main {
     public static void main(String[] args) {
-        printYearsAndDays(561600);
+        printEqual(1, 1, 1);
+        printEqual(1, 1, 2);
+        printEqual(1, 1, 2);
+        printEqual(1, 2, 3);
     }
 
-    public static void printYearsAndDays(long minutes) {
-        if (minutes < 0) {
+    public static void printEqual(int a, int b, int c) {
+        if (a < 0 || b < 0 || c < 0) {
             System.out.println("Invalid Value");
+        } else if (a == b && b == c) {
+            System.out.println("All numbers are equal");
+        } else if (a != b && a != c && b != a && b !=c ){
+            System.out.println("All numbers are different");
         } else {
-            int hours = (int) minutes / 60;
-            int days = hours / 24;
-            System.out.println(minutes + " min = " + days / 365 + " y and " + days % 365 + " d");
+            System.out.println("Neither all are equal or different");
         }
     }
 
