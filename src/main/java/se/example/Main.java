@@ -5,25 +5,28 @@ package se.example;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println(getEvenDigitSum(123456789));
-        System.out.println(getEvenDigitSum(252));
-        System.out.println(getEvenDigitSum(-22));
+        System.out.println(hasSharedDigit(12, 23));
+        System.out.println(hasSharedDigit(9, 99));
+        System.out.println(hasSharedDigit(15, 55));
+        System.out.println(hasSharedDigit(12, 43));
     }
 
-    public static int getEvenDigitSum(int number) {
-        if (number < 0) {
-            return -1;
+    public static boolean hasSharedDigit(int number, int number2) {
+        if (number < 10 || number > 99 || number2 < 10 || number2 > 99) {
+            return false;
         }
-        int sum = 0;
         while(number > 0) {
-            int lastNumber = (number % 10);
-            if (lastNumber % 2 == 0) {
-                sum += lastNumber;
+            int digit = number % 10;
+            int auxNumber2 = number2;
+            while (auxNumber2 > 0) {
+                if (digit == (auxNumber2 % 10)) {
+                    return true;
+                }
+                auxNumber2 /= 10;
             }
             number /= 10;
         }
-
-        return sum;
+        return false;
     }
 
 }
