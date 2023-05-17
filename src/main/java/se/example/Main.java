@@ -5,27 +5,31 @@ package se.example;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println(hasSharedDigit(12, 23));
-        System.out.println(hasSharedDigit(9, 99));
-        System.out.println(hasSharedDigit(15, 55));
-        System.out.println(hasSharedDigit(12, 43));
+        System.out.println(isValid(10));
+        System.out.println(isValid(468));
+        System.out.println(isValid(1051));
+
+        System.out.println(hasSameLastDigit(41, 22, 71));
+        System.out.println(hasSameLastDigit(23, 32, 42));
+        System.out.println(hasSameLastDigit(9, 99, 999));
     }
 
-    public static boolean hasSharedDigit(int number, int number2) {
-        if (number < 10 || number > 99 || number2 < 10 || number2 > 99) {
-            return false;
-        }
-        while(number > 0) {
-            int digit = number % 10;
-            int auxNumber2 = number2;
-            while (auxNumber2 > 0) {
-                if (digit == (auxNumber2 % 10)) {
-                    return true;
-                }
-                auxNumber2 /= 10;
+    public static boolean hasSameLastDigit(int a, int b, int c) {
+
+        if (isValid(a) && isValid(b) && isValid(c)) {
+            if (((a % 10) == (b % 10)) || ((a % 10) == (c % 10)) || ((b % 10) == (c % 10))) {
+                return true;
             }
-            number /= 10;
         }
+
+        return false;
+    }
+
+    public static boolean isValid(int number) {
+        if (number >= 10 && number <= 1000) {
+            return true;
+        }
+
         return false;
     }
 
