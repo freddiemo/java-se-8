@@ -5,27 +5,29 @@ package se.example;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Number -1221 is Palindrome " + isPalindrome(-1221));
-        System.out.println("Number 707 is Palindrome " + isPalindrome(707));
-        System.out.println("Number 11212 is Palindrome " + isPalindrome(11212));
+        System.out.println(sumFirstAndLastDigit(252));
+        System.out.println(sumFirstAndLastDigit(257));
+        System.out.println(sumFirstAndLastDigit(0));
+        System.out.println(sumFirstAndLastDigit(5));
+        System.out.println(sumFirstAndLastDigit(-10));
     }
 
-
-    public static boolean isPalindrome(int number) {
-        int reverse = 0;
+    public static int sumFirstAndLastDigit(int number) {
         if (number < 0) {
-            number *= -1;
+            return -1;
         }
-        int number2 = number;
-        do {
-            reverse *= 10;
-            reverse += number2 % 10;
-            number2 /= 10;
-        } while(number2 > 0);
-        if (number == reverse) {
-            return true;
+        if (number < 9) {
+            return number * 2;
         }
-
-        return false;
+        int firstNumber = 0;
+        int lastNumber = number % 10;
+        while(number > 9) {
+            number /= 10;
+            if (number <= 9) {
+                firstNumber = number;
+            }
+        }
+        return firstNumber + lastNumber;
     }
+
 }
