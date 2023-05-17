@@ -1,27 +1,21 @@
 package se.example;
 
 /**
- * Methods overloading samples.
+ * Methods samples.
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println(area(2));
-        System.out.println(area(1, 2));
+        printYearsAndDays(561600);
     }
 
-    public static double area(double radius) {
-        if (radius < 0) {
-            return -1;
+    public static void printYearsAndDays(long minutes) {
+        if (minutes < 0) {
+            System.out.println("Invalid Value");
+        } else {
+            int hours = (int) minutes / 60;
+            int days = hours / 24;
+            System.out.println(minutes + " min = " + days / 365 + " y and " + days % 365 + " d");
         }
-        return radius * radius * Math.PI;
-    }
-
-    public static double area(double x, double y) {
-        if (x < 0 || y < 0) {
-            return -1;
-        }
-
-        return x * y;
     }
 
 }
