@@ -5,21 +5,17 @@ package se.example;
  */
 public class Main {
     public static void main(String[] args) {
-        printEqual(1, 1, 1);
-        printEqual(1, 1, 2);
-        printEqual(1, 1, 2);
-        printEqual(1, 2, 3);
+        System.out.println(isCatPlaying(true, 10));
+        System.out.println(isCatPlaying(false, 36));
+        System.out.println(isCatPlaying(false, 35));
+        System.out.println(isCatPlaying(true, 45));
     }
 
-    public static void printEqual(int a, int b, int c) {
-        if (a < 0 || b < 0 || c < 0) {
-            System.out.println("Invalid Value");
-        } else if (a == b && b == c) {
-            System.out.println("All numbers are equal");
-        } else if (a != b && a != c && b != a && b !=c ){
-            System.out.println("All numbers are different");
+    public static boolean isCatPlaying(boolean summer, int temperature) {
+        if ((temperature >= 25 && temperature <= 35) || summer && (temperature >= 25 && temperature <= 45)) {
+            return true;
         } else {
-            System.out.println("Neither all are equal or different");
+            return false;
         }
     }
 
