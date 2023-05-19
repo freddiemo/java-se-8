@@ -1,23 +1,30 @@
 package se.example;
 
-import se.example.scanner_console_10.PaintJob5;
+import se.example.classes_11.Car;
 
 /**
- * Inputs console sample
+ * Classes sample
  */
 public class Main {
     public static void main(String[] args) {
-        /*System.out.println(PaintJob5.getBucketCount(3.4, 1.5));
-        System.out.println(PaintJob5.getBucketCount(6.26, 2.2));
-        System.out.println(PaintJob5.getBucketCount(3.26, 0.75));*/
 
-        /*System.out.println(PaintJob5.getBucketCount(-3.4, 2.1, 1.5));
-        System.out.println(PaintJob5.getBucketCount(3.4, 2.1, 1.5));
-        System.out.println(PaintJob5.getBucketCount(7.25, 4.3, 2.35));*/
+        Car car = new Car();
+        car.setMake("Porshe");
+        car.setModel("Carrera");
+        car.setDoors(2);
+        car.setConvertible(true);
+        car.setColor("black");
+        System.out.println("make = " + car.getMake());
+        System.out.println("model = " + car.getModel());
+        car.describeCar();
 
-        System.out.println(PaintJob5.getBucketCount(-3.4, 2.1, 1.5, 2));
-        System.out.println(PaintJob5.getBucketCount(3.4, 2.1, 1.5, 2));
-        System.out.println(PaintJob5.getBucketCount(2.75, 3.25, 2.5, 1));
+        Car targa = new Car();
+        targa.setMake("Porshe");
+        targa.setModel("Targa");
+        targa.setDoors(2);
+        targa.setConvertible(false);
+        targa.setColor("red");
+        targa.describeCar();
     }
 
 }
