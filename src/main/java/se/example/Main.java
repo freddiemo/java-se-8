@@ -1,23 +1,23 @@
 package se.example;
 
-
-import se.example.classes_11.Floor9;
-import se.example.classes_11.Carpet9;
-import se.example.classes_11.Calculator9;
+import se.example.classes_11.ComplexNumber10;
 
 /**
  * Classes samples.
  */
 public class Main {
     public static void main(String[] args) {
-        Carpet9 carpet = new Carpet9(3.5);
-        Floor9 floor = new Floor9(2.75, 4.0);
-        Calculator9 calculator = new Calculator9(floor, carpet);
-        System.out.println("total= " + calculator.getTotalCost());
-        carpet = new Carpet9(1.5);
-        floor = new Floor9(5.4, 4.5);
-        calculator = new Calculator9(floor, carpet);
-        System.out.println("total= " + calculator.getTotalCost());
+        ComplexNumber10 one = new ComplexNumber10(1.0, 1.0);
+        ComplexNumber10 number = new ComplexNumber10(2.5, -1.5);
+        one.add(1, 1);
+        System.out.println("one.real= " + one.getReal());
+        System.out.println("one.imaginary= " + one.getImaginary());
+        one.subtract(number);
+        System.out.println("one.real= " + one.getReal());
+        System.out.println("one.imaginary= " + one.getImaginary());
+        number.subtract(one);
+        System.out.println("number.real= " + number.getReal());
+        System.out.println("number.imaginary= " + number.getImaginary());
     }
 
 }
