@@ -1,23 +1,38 @@
 package se.example;
 
-import se.example.classes_11.ComplexNumber10;
+import se.example.inheritance_12.Animal;
+import se.example.inheritance_12.Dog;
+import se.example.inheritance_12.Fish;
 
 /**
- * Classes samples.
+ * Inheritance samples.
  */
 public class Main {
     public static void main(String[] args) {
-        ComplexNumber10 one = new ComplexNumber10(1.0, 1.0);
-        ComplexNumber10 number = new ComplexNumber10(2.5, -1.5);
-        one.add(1, 1);
-        System.out.println("one.real= " + one.getReal());
-        System.out.println("one.imaginary= " + one.getImaginary());
-        one.subtract(number);
-        System.out.println("one.real= " + one.getReal());
-        System.out.println("one.imaginary= " + one.getImaginary());
-        number.subtract(one);
-        System.out.println("number.real= " + number.getReal());
-        System.out.println("number.imaginary= " + number.getImaginary());
+        Animal animal = new Animal("Generic Animal", "Huge", 400);
+        doAnimalStuff(animal, "slow");
+
+        Dog dog = new Dog();
+        doAnimalStuff(dog, "fast");
+
+        Dog yorkie = new Dog("Yorkie", 15);
+        doAnimalStuff(yorkie, "fast");
+
+        Dog retriever = new Dog("Labrador Retriever", 65, "Floppy", "Swimmer");
+        doAnimalStuff(retriever, "slow");
+
+        Dog wolf = new Dog("Wolf", 40);
+        doAnimalStuff(wolf, "fast");
+
+        Fish goldie = new Fish("Goldfish", 0.25, 2, 3);
+        doAnimalStuff(goldie, "fast");
+    }
+
+    public static void doAnimalStuff(Animal animal, String speed) {
+        animal.makeNoise();
+        animal.move(speed);
+        System.out.println(animal);
+        System.out.println("_ _ _ _");
     }
 
 }
