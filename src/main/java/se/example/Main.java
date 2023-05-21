@@ -1,42 +1,48 @@
 package se.example;
 
-import se.example.strings_13.Strings;
-import se.example.strings_13.StringManipulationMethods;
+import se.example.strings_13.StringBuilder4;
 
 /**
  * Strings samples.
  */
 public class Main extends Object {
     public static void main(String[] args) {
-        String birthDate = "25/11/1982";
-        int startingIndex = birthDate.indexOf("1982");
-        System.out.println("startingIndex = " + startingIndex);
-        System.out.println("Birth year = " + StringManipulationMethods.substring(birthDate, startingIndex));
+        String helloWorld = "Hello" + " World";
 
-        System.out.println("Birth month = " + StringManipulationMethods.substring(birthDate, 3, 5));
+        StringBuilder hellowWorldBuilder = new StringBuilder("Hello" + " World");
 
-        String newDate = StringManipulationMethods.join("/", "25", "11", "1982");
-        System.out.println("newDate = " + newDate);
+        printInformation(helloWorld);
+        StringBuilder4.printInformation(hellowWorldBuilder);
 
-        newDate = "25";
-        newDate = StringManipulationMethods.concat(newDate, "/");
-        newDate = StringManipulationMethods.concat(newDate, "11/1982");
-        System.out.println("newDate " + newDate);
+        StringBuilder4.append(hellowWorldBuilder, " and Goodbye");
+        StringBuilder4.printInformation(hellowWorldBuilder);
 
-        newDate = "25" + "/" + "11/1982";
-        System.out.println("newDate = " + newDate);
+        StringBuilder emptyStart = new StringBuilder();
+        StringBuilder emptyStart32 = new StringBuilder(32);
+        StringBuilder4.printInformation(emptyStart);
+        StringBuilder4.printInformation(emptyStart32);
 
-        newDate = "25".concat("/").concat("11").concat("/").concat("1982");
-        System.out.println("newDate = " + newDate);
+        StringBuilder builderPlus = new StringBuilder("Hello" + " World");
+        StringBuilder4.append(builderPlus, " and Goodbye");
+        // builderPlus.deleteCharAt(16).insert(16, 'g');
+        StringBuilder4.deleteCharAt(builderPlus, 16);
+        StringBuilder4.insert(builderPlus, 16, 'g');
+        System.out.println(builderPlus);
 
-        System.out.println(StringManipulationMethods.replace(newDate, '/', '-'));
+        StringBuilder4.replace(builderPlus, 16, 17, "G");
+        System.out.println(builderPlus);
 
-        System.out.println(StringManipulationMethods.replace(newDate, "2", "00"));
+        StringBuilder4.reverse(builderPlus);
+        StringBuilder4.setLength(builderPlus, 7);
+        System.out.println(builderPlus);
 
-        System.out.println(StringManipulationMethods.replaceFirst(newDate, "/", "-"));
+        builderPlus.reverse().setLength(7);
+    }
 
-        System.out.println(StringManipulationMethods.replaceAll(newDate, "/", "---"));
-
+    public static void printInformation(String string) {
+        System.out.println("String = " + string);
+        System.out.println("length = " + string.length());
     }
 
 }
+
