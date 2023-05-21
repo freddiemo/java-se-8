@@ -1,47 +1,21 @@
 package se.example;
 
-import se.example.strings_13.StringBuilder4;
+import se.example.strings_13.cylinder_5.Circle;
+import se.example.strings_13.cylinder_5.Cylinder;
 
 /**
  * Strings samples.
  */
 public class Main extends Object {
     public static void main(String[] args) {
-        String helloWorld = "Hello" + " World";
-
-        StringBuilder hellowWorldBuilder = new StringBuilder("Hello" + " World");
-
-        printInformation(helloWorld);
-        StringBuilder4.printInformation(hellowWorldBuilder);
-
-        StringBuilder4.append(hellowWorldBuilder, " and Goodbye");
-        StringBuilder4.printInformation(hellowWorldBuilder);
-
-        StringBuilder emptyStart = new StringBuilder();
-        StringBuilder emptyStart32 = new StringBuilder(32);
-        StringBuilder4.printInformation(emptyStart);
-        StringBuilder4.printInformation(emptyStart32);
-
-        StringBuilder builderPlus = new StringBuilder("Hello" + " World");
-        StringBuilder4.append(builderPlus, " and Goodbye");
-        // builderPlus.deleteCharAt(16).insert(16, 'g');
-        StringBuilder4.deleteCharAt(builderPlus, 16);
-        StringBuilder4.insert(builderPlus, 16, 'g');
-        System.out.println(builderPlus);
-
-        StringBuilder4.replace(builderPlus, 16, 17, "G");
-        System.out.println(builderPlus);
-
-        StringBuilder4.reverse(builderPlus);
-        StringBuilder4.setLength(builderPlus, 7);
-        System.out.println(builderPlus);
-
-        builderPlus.reverse().setLength(7);
-    }
-
-    public static void printInformation(String string) {
-        System.out.println("String = " + string);
-        System.out.println("length = " + string.length());
+        Circle circle = new Circle(3.75);
+        System.out.println("circle.radius= " + circle.getRadius());
+        System.out.println("circle.area= " + circle.getArea());
+        Cylinder cylinder = new Cylinder(5.55, 7.25);
+        System.out.println("cylinder.radius= " + cylinder.getRadius());
+        System.out.println("cylinder.height= " + cylinder.getHeight());
+        System.out.println("cylinder.area= " + cylinder.getArea());
+        System.out.println("cylinder.volume= " + cylinder.getVolume());
     }
 
 }
