@@ -78,9 +78,10 @@ public class Strings {
             return;
         }
 
-        if (string.isBlank()) {
+        // no allowed in java 8
+        /*if (string.isBlank()) {
             System.out.println("String is Blank");
-        }
+        }*/
 
         System.out.printf("First char = %c %n", string.charAt(0));
         System.out.printf("First char = %c %n", string.charAt(length - 1));

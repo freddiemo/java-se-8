@@ -1,40 +1,42 @@
 package se.example;
 
 import se.example.strings_13.Strings;
+import se.example.strings_13.StringManipulationMethods;
 
 /**
  * Strings samples.
  */
 public class Main extends Object {
     public static void main(String[] args) {
+        String birthDate = "25/11/1982";
+        int startingIndex = birthDate.indexOf("1982");
+        System.out.println("startingIndex = " + startingIndex);
+        System.out.println("Birth year = " + StringManipulationMethods.substring(birthDate, startingIndex));
 
-        // Strings.stringFormatting();
-        Strings.printInformation("Hello World");
-        Strings.printInformation("");
-        Strings.printInformation("\t    \n");
+        System.out.println("Birth month = " + StringManipulationMethods.substring(birthDate, 3, 5));
 
-        String helloWorld = "Hello World";
-        System.out.printf("index of r = %d %n", Strings.getIndex(helloWorld, 'r'));
-        System.out.printf("index of World = %d %n", Strings.getIndex(helloWorld, "World"));
+        String newDate = StringManipulationMethods.join("/", "25", "11", "1982");
+        System.out.println("newDate = " + newDate);
 
-        System.out.printf("index of l = %d %n", Strings.getIndex(helloWorld, 'l'));
-        System.out.printf("index of l = %d %n", Strings.getLastIndex(helloWorld, 'l'));
+        newDate = "25";
+        newDate = StringManipulationMethods.concat(newDate, "/");
+        newDate = StringManipulationMethods.concat(newDate, "11/1982");
+        System.out.println("newDate " + newDate);
 
-        System.out.printf("index of l = %d %n", Strings.getIndex(helloWorld, 'l', 3));
-        System.out.printf("index of l = %d %n", Strings.getLastIndex(helloWorld, 'l', 8));
+        newDate = "25" + "/" + "11/1982";
+        System.out.println("newDate = " + newDate);
 
-        String lowerCased = Strings.toLowerCase(helloWorld);
-        Strings.equals(helloWorld, lowerCased);
-        
-        Strings.equalsIgnoreCase(helloWorld, lowerCased);
+        newDate = "25".concat("/").concat("11").concat("/").concat("1982");
+        System.out.println("newDate = " + newDate);
 
-        Strings.startsWith(helloWorld, "Hello");
+        System.out.println(StringManipulationMethods.replace(newDate, '/', '-'));
 
-        Strings.endsWith(helloWorld, "World");
+        System.out.println(StringManipulationMethods.replace(newDate, "2", "00"));
 
-        Strings.contains(helloWorld, "World");
+        System.out.println(StringManipulationMethods.replaceFirst(newDate, "/", "-"));
 
-        Strings.contentEquals(helloWorld, "Hello World");
+        System.out.println(StringManipulationMethods.replaceAll(newDate, "/", "---"));
+
     }
 
 }
